@@ -16,9 +16,7 @@ This project implements an automated data pipeline that:
 
 ## 🏗️ Architecture
 
-```
-![alt text](assets/image.png)
-```
+![alt text](asset/image.png)
 
 ## 🛠️ Tech Stack
 
