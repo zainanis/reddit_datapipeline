@@ -1,6 +1,6 @@
 /reddit_setup
 /logs
 .env
-/config
+/config/config.cfg
 /venv
 /data

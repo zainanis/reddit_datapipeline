@@ -10,7 +10,7 @@ parser.read(config_path)
 
 # SECRET=parser.get('api_keys','reddit_secret_key')
 # CLIENT_ID=parser.get('api_keys','reddit_client_id')
-REDDIT_SUBREDDIT_PATH=parser.get('api','reddit_subreddit_path')
+# REDDIT_SUBREDDIT_PATH=parser.get('api','reddit_subreddit_path')
 
 DATABASE_HOST =  parser.get('database', 'database_host')
 DATABASE_NAME =  parser.get('database', 'database_name')

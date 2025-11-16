@@ -24,6 +24,7 @@ def extract_posts_public(subreddit:str,limit:None):
         
         # Fix: Use .json() instead of .data
         data = response.json()
+        print(data)
         post_lists=[]
         print("Extracting post")
         for post in data["data"]["children"]:

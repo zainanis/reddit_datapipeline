@@ -31,7 +31,7 @@ extract = PythonOperator(
     python_callable=reddit_pipeline_v02,
     op_kwargs={
         'file_name':f'reddit_{file_postfix}',
-        'subreddit':'dataenginering',
+        'subreddit':'dataengineering',
         'time_filter':'day',
         'limit':100
     },
