@@ -15,9 +15,7 @@ default_args ={
 
 file_postfix=datetime.now().strftime("%Y%m%d")
 
-# def test():
-#     print("Hello world")
-#     pass
+
 
 dag=DAG(
     dag_id='etl_reddit_pipeline',

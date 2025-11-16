@@ -6,6 +6,3 @@ def reddit_pipeline(file_name:str,subreddit:str,time_filter='day',limit=None):
     posts=extract_posts(instance,subreddit,time_filter,limit)
     return
 
-def reddit_pipeline_v02(limit=None):
-    posts=extract_posts_public(REDDIT_SUBREDDIT_PATH,limit)
-    return
