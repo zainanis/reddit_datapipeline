@@ -1,31 +1,14 @@
-import praw
-from praw import Reddit
 import sys
 import requests
 import pandas as pd
 import numpy as np
 
 
-def connect_reddit(client_id,client_secret,user_agent)->Reddit:
-    try:
-        reddit=Reddit(client_id,client_secret,user_agent)
-        print("connected to reddit")
-        return reddit
-    except Exception as e:
-        print(e)
-        sys.exit(1)
-
-def extract_posts(reddit_instance:Reddit,subreddit:str,time_filter:str,limit:None):
-    subreddit=reddit_instance.subreddit(subreddit)
-    posts=subreddit.top(time_filter,limit=limit)
-
-    post_lists=[]
-
-    print(posts["data"])
-    # for post in posts:
 
 
-def extract_posts_public(api:str,limit:None):
+
+def extract_posts_public(subreddit:str,limit:None):
+    reddit_subreddit_path =f"https://www.reddit.com/r/{subreddit}/new.json?limit={limit}"
 
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
@@ -36,7 +19,7 @@ def extract_posts_public(api:str,limit:None):
         params['limit'] = limit
     
     try:
-        response = requests.get(api, headers=headers, params=params)
+        response = requests.get(reddit_subreddit_path, headers=headers, params=params)
         response.raise_for_status()  
         
         # Fix: Use .json() instead of .data
