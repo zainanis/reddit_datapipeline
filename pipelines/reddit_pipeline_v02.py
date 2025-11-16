@@ -9,4 +9,4 @@ def reddit_pipeline_v02(file_name:str,limit=None):
     post_df=transform_data(post_df)  
     file_path=f"{OUTPUT_PATH}/{file_name}.csv" 
     load_data_to_csv(post_df,file_path)
-    return
+    return file_path

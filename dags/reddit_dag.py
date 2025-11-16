@@ -4,6 +4,7 @@ from datetime import datetime
 import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from pipelines.upload_s3_pipeline import upload_s3_pipeline
 from pipelines.reddit_pipeline_v02 import reddit_pipeline_v02
 
 
@@ -38,4 +39,11 @@ extract = PythonOperator(
 
 )
 
+upload_s3=PythonOperator(
+    task_id='s3_upload',
+    python_callable=upload_s3_pipeline,
+    dag=dag
 
+)
+
+extract>>upload_s3
